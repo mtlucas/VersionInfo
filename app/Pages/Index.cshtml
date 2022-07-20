@@ -1,0 +1,25 @@
+﻿@page
+@model VersionInfo.Pages.IndexModel
+@{
+    ViewData["Title"] = "VersionInfo.Net";
+}
+<div class="wrap">
+    <div class="cell-wrap left">
+        <table style="display: inline-block;" class="left">
+            <tr><th>Application versions:</th></tr>
+            @foreach (var app in Model._apps)
+            {
+    	        <tr><td><font color="black"><b>&nbsp; @app.appName &nbsp;</b></font></td><td><font color="@app.appColor"><b>&nbsp; @app.appVersion &nbsp;</b></font></td></tr>
+            }
+        </table>
+    </div>
+    <div class="cell-wrap right">
+        <table style="display: inline-block;" class="right">
+            <tr><th>Database versions:</th></tr>
+            @foreach (var db in Model._dbs)
+            {
+    	        <tr><td><font color="black"><b>&nbsp; @db.dbName &nbsp;</b></font></td><td><font color="@db.dbColor"><b>&nbsp; @db.dbVersion &nbsp;</b></font></td></tr>
+            }
+        </table>
+    </div>
+</div>
