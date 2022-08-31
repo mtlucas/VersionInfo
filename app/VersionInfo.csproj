@@ -7,7 +7,7 @@
 	<Description>Displays version information on P1S SoleSource Applications</Description>
     <IsPackable>true</IsPackable>
 	<NuspecFile>deploy.nuspec</NuspecFile>
-	<PackageProjectUrlhttps://github.com/mtlucas/VersionInfo</PackageProjectUrl>
+	<PackageProjectUrl>https://github.com/mtlucas/VersionInfo</PackageProjectUrl>
 	<Copyright>© 2022</Copyright>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<RepositoryUrl>hhttps://github.com/mtlucas/VersionInfo.git</RepositoryUrl>
