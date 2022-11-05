@@ -5,7 +5,7 @@
 	<Authors>Michael Lucas (mike@lucasnet.org)</Authors>
 	<Company>Lucasnet.org</Company>
 	<Description>Displays version information on P1S SoleSource Applications</Description>
-    <IsPackable>true</IsPackable>
+ 	<IsPackable>true</IsPackable>
 	<NuspecFile>deploy.nuspec</NuspecFile>
 	<PackageProjectUrl>https://github.com/mtlucas/VersionInfo</PackageProjectUrl>
 	<Copyright>© 2022</Copyright>
