@@ -90,17 +90,21 @@ class Build : NukeBuild
 
     Target Pack => _ => _
         .DependsOn(Publish)
+        .Requires(() => BuildVersion)
         .Executes(() =>
         {
-            NuGetTasks.NuGetPack(s => s
+            DotNetPack(s => s
+                .SetProject(Solution)
                 .SetConfiguration(Configuration)
-                .SetTargetPath(RootDirectory / NuspecFile)
-                .SetIncludeReferencedProjects(true)
-                .SetVersion(BuildVersion)
+                .EnableNoBuild()
+                .EnableNoRestore()
+                .SetNoDependencies(true)
+                .SetProperty("configuration", Configuration.ToString())
                 .SetProperty("description", ProjectDescription)
                 .SetProperty("copyright", ProjectCopyright)
                 .SetProperty("authors", ProjectAuthor)
                 .SetProperty("projectUrl", ProjectUrl)
+                .SetProperty("packageversion", BuildVersion)
                 .SetOutputDirectory(ArtifactsDirectory / "nuget"));
         });
 
@@ -117,7 +121,7 @@ class Build : NukeBuild
                 .Where(x => !x.EndsWith("symbols.nupkg"))
                 .ForEach(x =>
                 {
-                    NuGetTasks.NuGetPush(s => s
+                    DotNetNuGetPush(s => s
                         .SetTargetPath(x)
                         .SetSource(NugetApiUrl)
                         .SetApiKey(NugetApiKey)

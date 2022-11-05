@@ -1,26 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-	<Title>VersionInfo.Net</Title>
-	<Authors>Michael Lucas (mike@lucasnet.org)</Authors>
-	<Company>Lucasnet.org</Company>
-	<Description>Displays version information on P1S SoleSource Applications</Description>
- 	<IsPackable>true</IsPackable>
-	<NuspecFile>deploy.nuspec</NuspecFile>
-	<PackageProjectUrl>https://github.com/mtlucas/VersionInfo</PackageProjectUrl>
-	<Copyright>© 2022</Copyright>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<RepositoryUrl>hhttps://github.com/mtlucas/VersionInfo.git</RepositoryUrl>
+    <Title>VersionInfo.Net</Title>
+    <Authors>Michael Lucas (mike@lucasnet.org)</Authors>
+    <Company>Lucasnet.org</Company>
+    <Description>Displays version information on P1S SoleSource Applications</Description>
+    <IsPackable>true</IsPackable>
+    <NuspecFile>deploy.nuspec</NuspecFile>
+    <PackageProjectUrl>https://github.com/mtlucas/VersionInfo</PackageProjectUrl>
+    <Copyright>© 2022</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/mtlucas/VersionInfo.git</RepositoryUrl>
+    <NuspecProperties>$(NuspecProperties);configuration=$(Configuration)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);version=$(PackageVersion)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);id=$(PackageId)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);authors=$(Authors)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);ProjectUrl=$(ProjectUrl)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);Description=$(Description)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);PackageReleaseNotes=$(PackageReleaseNotes)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);Copyright=$(Copyright)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);PackageTags=$(PackageTags)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);RepositoryType=$(RepositoryType)</NuspecProperties>
+    <NuspecProperties>$(NuspecProperties);RepositoryUrl=$(RepositoryUrl)</NuspecProperties>
   </PropertyGroup>
 
   <PropertyGroup>
-	<TargetFramework>net6.0</TargetFramework>
-	<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
-	<DefaultItemExcludes>$(DefaultItemExcludes);bin\**;obj\**;artifacts\**;build\**</DefaultItemExcludes>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <DefaultItemExcludes>$(DefaultItemExcludes);bin\**;obj\**;artifacts\**;build\**</DefaultItemExcludes>
     <Nullable>enable</Nullable>
-	<ImplicitUsings>enable</ImplicitUsings>
-	<AssemblyName>VersionInfo</AssemblyName>
-	<NoWarn>NU5100</NoWarn>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>VersionInfo</AssemblyName>
+    <NoWarn>NU5100</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-	<Content Update="appsettings.*.json" CopyToPublishDirectory="Never" />
+    <Content Update="appsettings.*.json" CopyToPublishDirectory="Never" />
   </ItemGroup>
 
   <ItemGroup>
