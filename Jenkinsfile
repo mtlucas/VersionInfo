@@ -4,7 +4,9 @@ pipeline {
     stage('Build, Pack and Push') {
       steps {
         script {
-          env.VERSION_NUMBER = VersionNumber(versionNumberString: '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_NUMBER}'
+          env.VERSION_NUMBER = VersionNumber(versionNumberString: '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_NUMBER}')
+          currentBuild.displayName = "${VERSION_NUMBER}"
+          echo "Building version ${VERSION_NUMBER}..."
           sh '''export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 export PATH=$PATH:/var/jenkins_home/.dotnet/dotnet-unix
 :; chmod +x ./app/build.cmd
